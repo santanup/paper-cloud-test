@@ -6,7 +6,7 @@
         "build": "next build",
         "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
         "dev": "nodemon server.js --exec babel-node",
-        "start": "cross-env NODE_ENV=production babel-node server.js",
+        "start": "yarn build && cross-env NODE_ENV=production babel-node server.js",
         "jest": "jest  --forceExit",
         "eslint": "eslint --ext .jsx --ext .js --fix --ignore-path .eslintignore ."
     },
