@@ -9,6 +9,7 @@ import {useStore} from 'laco-react';
 import {Box} from '@material-ui/core';
 import TweetItem from '../src/components/TweetItem';
 import TweetSkeleton from '../src/components/TweetSkeleton';
+import Head from 'next/head';
 
 const Search = () => {
 
@@ -24,7 +25,6 @@ const Search = () => {
         if (!q) return Router.push('/');
         searchTweets(q)
             .then(response => {
-                // console.log(response);
                 const {tweets} = response;
                 const {search_metadata, statuses} = tweets;
                 TweetsStore.set(() => ({search_metadata, statuses}), 'search-result');
@@ -46,9 +46,12 @@ const Search = () => {
 
     return (
         <Container>
+            <Head>
+                <title>Twitter - Search</title>
+            </Head>
             <Box mt={3} mb={3}>
                 <Grid container spacing={2}>
-                    <Grid md={8} sm={12} sx={12}>
+                    <Grid md={8} sm={12} sx={12} item>
                         {
                             statuses.map((each, index) => <TweetItem tweet={each} key={index}/>)
                         }

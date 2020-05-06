@@ -91,6 +91,7 @@ const Appbar = () => {
 
     const handleEnter = (event) => {
         if (event.keyCode === 13) {
+            if (!query) return Router.push('/');
             Router.push('/search?q=' + query);
         }
     };
@@ -120,6 +121,7 @@ const Appbar = () => {
                                 <SearchIcon />
                             </div>
                             <InputBase
+                                autoFocus
                                 placeholder="Search…"
                                 classes={{
                                     root: classes.inputRoot,
