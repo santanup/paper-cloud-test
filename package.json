@@ -1,0 +1,47 @@
+{
+    "name": "nextjs",
+    "version": "4.0.0",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+        "dev": "nodemon server.js --exec babel-node",
+        "start": "cross-env NODE_ENV=production babel-node server.js",
+        "jest": "jest  --forceExit",
+        "eslint": "eslint --ext .jsx --ext .js --fix --ignore-path .eslintignore ."
+    },
+    "dependencies": {
+        "@material-ui/core": "latest",
+        "@material-ui/icons": "^4.9.1",
+        "@material-ui/lab": "^4.0.0-alpha.52",
+        "axios": "^0.19.2",
+        "body-parser": "^1.19.0",
+        "clsx": "latest",
+        "cross-env": "^7.0.2",
+        "express": "^4.17.1",
+        "js-time-diff": "^1.0.0",
+        "laco": "^1.2.1",
+        "laco-react": "^1.1.0",
+        "next": "latest",
+        "prop-types": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "twitter": "^1.7.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/node": "^7.8.7",
+        "eslint": "^6.8.0",
+        "eslint-plugin-react": "^7.19.0",
+        "nodemon": "^2.0.3",
+        "webpack": "^4.43.0"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "pages",
+            "node_modules",
+            ".next",
+            "src/components"
+        ]
+    }
+}
