@@ -18,7 +18,7 @@
         "body-parser": "^1.19.0",
         "clsx": "latest",
         "cross-env": "^7.0.2",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "js-time-diff": "^1.0.0",
         "laco": "^1.2.1",
         "laco-react": "^1.1.0",
